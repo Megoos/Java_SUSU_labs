@@ -1,6 +1,5 @@
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -8,16 +7,12 @@ import org.junit.Test;
 public class PeopleTest {
 	
 	People testpeople = new People();
-	ArrayList<Person> newcol = new ArrayList<Person>();
-	
+		
 	@Before
 	public void setUp() throws Exception {
 		testpeople.add(new Person("Георгий", "Викторович", "Мусатов", 22));
 		testpeople.add(new Person("Михаил", "Евгеньевич", "Гуськов", 25));
-		testpeople.add(new Person("Ксения", "Игоревна", "Иванова", 30));
-		
-		newcol.add(new Person("Анна", "Андреевна", "Викторова", 30));
-		newcol.add(new Person("Сергей", "Сергеевич", "Кравченко", 27));
+		testpeople.add(new Person("Ксения", "Игоревна", "Иванова", 30));		
 	}
 
 	@Test
@@ -44,37 +39,7 @@ public class PeopleTest {
 	public void test_add_index_out_of_bounds()
 	{
 		testpeople.add(6, new Person());
-	}
-	
-	@Test
-	public void test_addAll() throws WrongAgeValueException
-	{
-		testpeople.addAll(newcol);
-		assertEquals("Георгий Викторович Мусатов, 22\n"
-				+ "Михаил Евгеньевич Гуськов, 25\n"
-				+ "Ксения Игоревна Иванова, 30\n"
-				+ "Анна Андреевна Викторова, 30\n"
-				+ "Сергей Сергеевич Кравченко, 27\n",
-						testpeople.toString());
-	}
-	
-	@Test
-	public void test_addAll_index()
-	{
-		testpeople.addAll(2, newcol);
-		assertEquals("Георгий Викторович Мусатов, 22\n"
-				+ "Михаил Евгеньевич Гуськов, 25\n"
-				+ "Анна Андреевна Викторова, 30\n"
-				+ "Сергей Сергеевич Кравченко, 27\n"
-				+ "Ксения Игоревна Иванова, 30\n",				
-						testpeople.toString());
-	}
-	
-	@Test (expected = IndexOutOfBoundsException.class)
-	public void test_addAll_index_out_of_bounds()
-	{
-		testpeople.addAll(7, newcol);
-	}
+	}	
 	
 	@Test
 	public void test_remove()

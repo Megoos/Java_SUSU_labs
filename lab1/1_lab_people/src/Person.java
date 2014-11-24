@@ -1,6 +1,6 @@
 
 public class Person {
-	//Обьявление полей класса
+	
 	private String firstName;
 	private String middleName;
 	private String lastName;
@@ -8,7 +8,7 @@ public class Person {
 	
 	Person(){};
 	
-	//метод записывает данные в поля	
+	
 	Person (String firstName, String middleName, 
 			String lastName, int age) throws WrongAgeValueException{
 		this.firstName = firstName;
@@ -17,7 +17,7 @@ public class Person {
 		setAge(age);
 	}
 	
-	//установка и проверка возраста
+	
 	public void setAge(int age) throws WrongAgeValueException{
 		if((age>=0) && (age<150)){
 			this.age = age;			

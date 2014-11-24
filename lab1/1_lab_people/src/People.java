@@ -1,11 +1,10 @@
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class People 
 {
 	private ArrayList<Person> people = new ArrayList<Person>(); 
 	
-	//People(){}
+	People(){}
 	
 	public boolean add(Person p) {
 		return people.add(p);
@@ -13,14 +12,6 @@ public class People
 	
 	public void add(int index, Person p) {
 		people.add(index, p);
-	}
-	
-	public boolean addAll(Collection<Person> collection) {
-		return people.addAll(collection);
-	}
-	
-	public boolean addAll(int index, Collection<Person> collection)	{
-		return people.addAll(index, collection);
 	}
 	
 	public Person remove(int index)	{
